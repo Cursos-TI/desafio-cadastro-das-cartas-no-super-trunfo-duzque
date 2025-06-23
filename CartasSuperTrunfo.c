@@ -1,9 +1,9 @@
-#include <stdio.h> // Inclui a biblioteca padrao de entrada e saida (para usar printf e scanf/fgets)
-#include <string.h> // Inclui a biblioteca para manipulacao de strings (para usar strcspn)
+#include <stdio.h> 
+#include <string.h>
 
 int main(){
 
-    // --- CARTA 1: Declaracao de Variaveis ---
+    // --- CARTA 1 ---
     char estado1[20];
     char codigo_da_carta1[6];
     char nome_da_cidade1[50];
@@ -12,10 +12,10 @@ int main(){
     float pib1;
     int numero_de_pontos_turisticos1;
 
-    // --- CARTA 2: Declaracao de Variaveis ---
+    // --- CARTA 2 ---
     char estado2[20];
     char codigo_da_carta2[6];
-    char nome_da_cidade2[50]; // Ajustado para 50, como a Carta 1, para nomes mais longos
+    char nome_da_cidade2[50]; // Até 50 caracteres
     unsigned int populacao2;
     float area_em_km2;
     float pib2;
@@ -89,7 +89,7 @@ int main(){
     float inverso_densidade2 = area_em_km2 / populacao2;
     double super_poder2 = (float) populacao2 + area_em_km2 + pib2 + (float) numero_de_pontos_turisticos2 + pib_per_capita2 + inverso_densidade2;
 
-    // --- RESULTADO FINAL: Exibicao das Cartas Cadastradas ---
+    // --- RESULTADO FINAL ---
     printf("\n--- Informacoes das Cartas Cadastradas ---\n");
 
     printf("\n--- Carta 1 ---\n");
@@ -124,11 +124,11 @@ int main(){
     int area1Maior = area_em_km1 > area_em_km2;
     int pib1Maior = pib1 > pib2;
     int pontosturisticos1Maior = numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2;
-    int densidade1Maior = densidade_populacional1 < densidade_populacional2; // Menor densidade pode ser melhor
+    int densidade1Maior = densidade_populacional1 < densidade_populacional2; // Menor pode ser melhor
     int pibpercapita1Maior = pib_per_capita1 > pib_per_capita2;
     int superpoder1Maior = super_poder1 > super_poder2;
 
-    int vencedorCarta = 2; // Variavel auxiliar para mostrar qual carta venceu
+    int vencedorCarta = 2; // Variavel para mostrar qual carta venceu
 
     printf("Populacao: Carta %d venceu (1: C1 > C2, 2: C2 <= C1)\n", vencedorCarta - populacao1Maior);
     printf("Area: Carta %d venceu (1: C1 > C2, 2: C2 <= C1)\n", vencedorCarta - area1Maior);
@@ -138,5 +138,5 @@ int main(){
     printf("PIB per Capita: Carta %d venceu (1: C1 > C2, 2: C2 <= C1)\n", vencedorCarta - pibpercapita1Maior);
     printf("Super Trunfo: Carta %d venceu (1: C1 > C2, 2: C2 <= C1)\n", vencedorCarta - superpoder1Maior);
     
-    return 0; // O programa terminou com sucesso
+    return 0;
 }
